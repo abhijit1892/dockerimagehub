@@ -1,0 +1,14 @@
+#use the official python image from the docker hub
+FROM python:3.9-slim
+
+#set the working directory
+WORKDIR /app
+
+#copy the current directory contents into the conayiner at /app
+COPY . /app
+
+RUN pip install flask
+
+EXPOSE 5000
+
+CMD ["python","app.py"]
